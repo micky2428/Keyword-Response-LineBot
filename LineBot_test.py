@@ -20,11 +20,8 @@ handler = WebhookHandler(os.getenv('fb9bfa5297b2c04a610fde0caf3f74a5', None)
 
 #line_bot_api = LineBotApi(channel_access_token)
 #handler = WebhookHandler(channel_secret)
-
-                         
-@handler.add(MessageEvent)
-def handle_message(event):                        
-                         
+   
+                                          
 @app.route("/callback", methods=['POST'])
     # 取得網路請求的標頭 X-Line-Signature 內容，確認請求是從 LINE Server 送來的
 def callback():
