@@ -17,8 +17,6 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.getenv('b+YZPLfqivSa3tY+uUr0nPP6tI4i3U6wChIrcjhIs6UlsdSF56k1S8E7EdDpvjRj8edR2U7bF9yDOjzcLqK7nG2ANizVg1XWHl+QxI8OLajHKteoE4Jprd3ZWRfDLgyIOll2KVNj6a0BbdckA0xtEwdB04t89/1O/w1cDnyilFU=', None))
 handler = WebhookHandler(os.getenv('fb9bfa5297b2c04a610fde0caf3f74a5', None)
 
-line_bot_api.push_message('U375beade1fa90ee0275c50c16dfb97c7', TextSendMessage(text='Successfully deployed'))
-
 
 #line_bot_api = LineBotApi(channel_access_token)
 #handler = WebhookHandler(channel_secret)
