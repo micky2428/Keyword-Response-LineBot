@@ -49,15 +49,32 @@ def app_introduction() -> str:
 請輸入查核表的編號🤖
 您將收到對應的圖片'''
 
-@handler.add(MessageEvent, message=TextMessage)
+
+machines = {}
+
+@handler.add(MessageEvent)
 def handle_message(event):
+    id = get_id(event)
+    get_state(event)
+    if id not in machines:
+        machines.update({id: get_fsm('idle')})
+
+    machines[id].advance(event)
+
+
+if __name__ == "__main__":
+    load_dotenv()
+    app.run()
+
+#@handler.add(MessageEvent, message=TextMessage)
+#def handle_message(event):
     #決定要回傳什麼到channel
-    msg_text = event.message.text
+#    msg_text = event.message.text
     
     # App功能介紹
 #    if re.match('@使用說明', msg_text):
-    if msg_text ='使用說明':
-         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='歡迎使用小廢柴2.0🙌 在這裡您將可以拯救你的眼睛～0請輸入查核表的編號🤖您將收到對應的圖片'))
+#    if msg_text ='使用說明':
+ #        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='歡迎使用小廢柴2.0🙌 在這裡您將可以拯救你的眼睛～0請輸入查核表的編號🤖您將收到對應的圖片'))
 
     # elif re.match('@x', message):
     #     image_message = ImageSendMessage(
@@ -81,5 +98,5 @@ def handle_message(event):
     #         obj = TextSendMessage(text = f'error {msg_text}')
     
 
-if __name__ == "__main__":
-    app.run()
+#if __name__ == "__main__":
+ #   app.run()
