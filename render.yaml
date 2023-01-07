@@ -1,11 +1,11 @@
 services:
 - type: web
-  name: linebot-flask-sander2
+  name: linebot-flask-sander3
   env: python
 # repo: https://github.com/line/line-bot-sdk-python.git
   repo: https://github.com/micky2428/line-bot-python-on-render.git
   buildCommand: pip install gunicorn -r requirements.txt
-  startCommand: gunicorn LineBot_test:app
+  startCommand: gunicorn line:app
   plan: free
   autoDeploy: false
   envVars:
