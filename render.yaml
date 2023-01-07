@@ -13,6 +13,7 @@ services:
     sync: false
   - key: LINE_CHANNEL_SECRET
     sync: false
+#2
 # - type: web
 #   name: line-bot-python-flask-with-handler
 #   env: python
