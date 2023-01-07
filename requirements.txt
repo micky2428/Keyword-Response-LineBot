@@ -2,9 +2,5 @@ line-bot-sdk
 flask
 requests
 beautifulsoup4
-pyChatGPT
-psycopg2
-openai
 os
 re
-dotenv
