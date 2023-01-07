@@ -1,6 +1,6 @@
 services:
 - type: web
-  name: linebot-flask-sander
+  name: linebot-flask-sander4
   env: python
 # repo: https://github.com/line/line-bot-sdk-python.git
   repo: https://github.com/micky2428/line-bot-python-on-render.git
