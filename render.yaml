@@ -5,7 +5,7 @@ services:
 # repo: https://github.com/line/line-bot-sdk-python.git
   repo: https://github.com/micky2428/line-bot-python-on-render.git
   buildCommand: pip install gunicorn -r requirements.txt
-  startCommand: gunicorn line:app
+  startCommand: gunicorn line1:app
   plan: free
   autoDeploy: false
   envVars:
