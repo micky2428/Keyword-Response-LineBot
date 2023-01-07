@@ -9,18 +9,15 @@ import re
 from dotenv import load_dotenv
 
 load_dotenv()
-channel_access_token = os.getenv('b+YZPLfqivSa3tY+uUr0nPP6tI4i3U6wChIrcjhIs6UlsdSF56k1S8E7EdDpvjRj8edR2U7bF9yDOjzcLqK7nG2ANizVg1XWHl+QxI8OLajHKteoE4Jprd3ZWRfDLgyIOll2KVNj6a0BbdckA0xtEwdB04t89/1O/w1cDnyilFU=', None)
-channel_secret = os.getenv('fb9bfa5297b2c04a610fde0caf3f74a5', None)
+#channel_access_token = os.getenv('b+YZPLfqivSa3tY+uUr0nPP6tI4i3U6wChIrcjhIs6UlsdSF56k1S8E7EdDpvjRj8edR2U7bF9yDOjzcLqK7nG2ANizVg1XWHl+QxI8OLajHKteoE4Jprd3ZWRfDLgyIOll2KVNj6a0BbdckA0xtEwdB04t89/1O/w1cDnyilFU=', None)
+#channel_secret = os.getenv('fb9bfa5297b2c04a610fde0caf3f74a5', None)
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('b+YZPLfqivSa3tY+uUr0nPP6tI4i3U6wChIrcjhIs6UlsdSF56k1S8E7EdDpvjRj8edR2U7bF9yDOjzcLqK7nG2ANizVg1XWHl+QxI8OLajHKteoE4Jprd3ZWRfDLgyIOll2KVNj6a0BbdckA0xtEwdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
+handler = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 
-handler = WebhookHandler('fb9bfa5297b2c04a610fde0caf3f74a5')
-
-
-line_bot_api.broadcast(TextSendMessage(text='Hello World!'))
-#line_bot_api.push_message('U375beade1fa90ee0275c50c16dfb97c7', TextSendMessage(text='Successfully deployed'))
+line_bot_api.push_message('U375beade1fa90ee0275c50c16dfb97c7', TextSendMessage(text='Successfully deployed'))
 
 
 #line_bot_api = LineBotApi(channel_access_token)
@@ -58,7 +55,7 @@ def handle_message(event):
     
     # App功能介紹
     if re.match('@使用說明', msg_text):
-        obj =TextSendMessage(app_introduction())
+        obj =TextSendMessage(text='歡迎使用小廢柴2.0🙌 在這裡您將可以拯救你的眼睛～0請輸入查核表的編號🤖您將收到對應的圖片')
 
     # elif re.match('@x', message):
     #     image_message = ImageSendMessage(
