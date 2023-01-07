@@ -73,7 +73,7 @@ if __name__ == "__main__":
     
     # App功能介紹
 #    if re.match('@使用說明', msg_text):
-#    if msg_text ='使用說明':
+#    if msg_text =='使用說明':
  #        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='歡迎使用小廢柴2.0🙌 在這裡您將可以拯救你的眼睛～0請輸入查核表的編號🤖您將收到對應的圖片'))
 
     # elif re.match('@x', message):
