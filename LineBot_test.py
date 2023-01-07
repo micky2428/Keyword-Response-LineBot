@@ -22,15 +22,13 @@ handler = WebhookHandler(os.getenv('fb9bfa5297b2c04a610fde0caf3f74a5', None)
 #handler = WebhookHandler(channel_secret)
 
 @app.route("/callback", methods=['POST'])
+  
 def callback():
-
     # 取得網路請求的標頭 X-Line-Signature 內容，確認請求是從 LINE Server 送來的
     signature = request.headers['X-Line-Signature']
-
     # 將請求內容取出
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
-
     # handle webhook body
     try:
         handler.handle(body, signature)
