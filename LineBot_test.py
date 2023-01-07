@@ -19,8 +19,8 @@ line_bot_api = LineBotApi('b+YZPLfqivSa3tY+uUr0nPP6tI4i3U6wChIrcjhIs6UlsdSF56k1S
 handler = WebhookHandler('fb9bfa5297b2c04a610fde0caf3f74a5')
 
 
-
-line_bot_api.push_message('U375beade1fa90ee0275c50c16dfb97c7', TextSendMessage(text='Successfully deployed'))
+line_bot_api.broadcast(TextSendMessage(text='Hello World!'))
+#line_bot_api.push_message('U375beade1fa90ee0275c50c16dfb97c7', TextSendMessage(text='Successfully deployed'))
 
 
 #line_bot_api = LineBotApi(channel_access_token)
