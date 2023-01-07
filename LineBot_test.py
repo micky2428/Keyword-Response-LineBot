@@ -16,8 +16,22 @@ channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi(channel_access_token)
-handler = WebhookHandler(channel_secret)
+line_bot_api = LineBotApi('b+YZPLfqivSa3tY+uUr0nPP6tI4i3U6wChIrcjhIs6UlsdSF56k1S8E7EdDpvjRj8edR2U7bF9yDOjzcLqK7nG2ANizVg1XWHl+QxI8OLajHKteoE4Jprd3ZWRfDLgyIOll2KVNj6a0BbdckA0xtEwdB04t89/1O/w1cDnyilFU=')
+
+handler = WebhookHandler('fb9bfa5297b2c04a610fde0caf3f74a5')
+
+
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    # get user id when reply
+    user_id = event.source.user_id
+    print("user_id =", user_id)
+
+#line_bot_api.push_message('U0b55f1fefdcf18168b0c8c515701a585', TextSendMessage(text='Successfully deployed'))
+
+
+#line_bot_api = LineBotApi(channel_access_token)
+#handler = WebhookHandler(channel_secret)
 
 @app.route("/callback", methods=['POST'])
 def callback():
