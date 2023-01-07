@@ -6,8 +6,6 @@ from linebot.models import (MessageEvent, TextMessage, TextSendMessage)
 
 #, TemplateSendMessage, ConfirmTemplate, MessageAction, FlexSendMessage, QuickReply, QuickReplyButton
 import re
-import myfun
-
 from dotenv import load_dotenv
 
 load_dotenv()
