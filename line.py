@@ -1,3 +1,10 @@
+#https://github.com/helgesander02/den_no_suke_LineBot/blob/main/hellofly.py
+
+#https://github.com/SkyLiNing823/line-bot-python-on-render/blob/master/app.py
+
+#https://github.com/colinjen88/line-bot-python-on-render/blob/master/render.yaml
+
+
 import os
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
