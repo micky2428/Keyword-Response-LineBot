@@ -1,1 +1,1 @@
-web gunicorn LineBot_test:app
+web: gunicorn LineBot_test:app
