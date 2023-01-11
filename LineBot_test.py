@@ -37,7 +37,7 @@ def handle_message(event):
     
     # App功能介紹
     if re.match('@使用說明', msg_text):
-      app_introduction = '''歡迎使用小廢柴2.0🙌 
+      msg_text = app_introduction = '''歡迎使用小廢柴2.0🙌 
          在這裡您將可以拯救你的眼睛～
          請輸入查核表的編號🤖
          您將收到對應的圖片'''
@@ -65,5 +65,10 @@ def handle_message(event):
     #         obj = TextSendMessage(text = f'error {msg_text}')
     
 
+# if __name__ == "__main__":
+#     app.run()
+      
+import os
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port) 
