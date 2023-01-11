@@ -40,7 +40,10 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=1)
+    message = TextSendMessage(text='''歡迎使用小廢柴2.0🙌 
+         在這裡您將可以拯救你的眼睛～
+         請輸入查核表的編號🤖
+         您將收到對應的圖片''')
     line_bot_api.reply_message(
         event.reply_token,
         message)
