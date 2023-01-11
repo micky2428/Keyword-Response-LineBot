@@ -1,7 +1,3 @@
 line-bot-sdk
 flask
-# requests
-# beautifulsoup4
-# re
 os
-# pip
