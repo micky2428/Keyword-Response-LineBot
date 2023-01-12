@@ -43,23 +43,33 @@ def handle_message(event):
     mtext = event.message.text
     if mtext =='info':
         message = TextSendMessage(text='''歡迎使用小廢柴2.0🙌 
-        在這裡您將可以拯救你的眼睛～
-        請輸入查核表的編號🤖
-        您將收到對應的圖片''')
+請輸入查核表的編號🤖
+您將收到對應的圖片''')
         line_bot_api.reply_message(
             event.reply_token, message)   
     
     elif mtext =='1':
-            image_message = ImageSendMessage(
-            original_content_url='https://drive.google.com/drive/my-drive?hl=zh-tw',
-            preview_image_url='https://drive.google.com/drive/my-drive?hl=zh-tw'
-            )
-            line_bot_api.reply_message(event.reply_token, image_message)
+            message = TextSendMessage(text='''未附圖片''')
+        line_bot_api.reply_message(
+            event.reply_token, message) 
     
     elif mtext =='2':
         image_message = ImageSendMessage(
-        original_content_url='https://i.imgur.com/9d0O0Jh.jpg',
-        preview_image_url='https://i.imgur.com/9d0O0Jh.jpg'
+        original_content_url='https://i.postimg.cc/ZRS5Dx5S/1.jpg',
+        preview_image_url='https://i.postimg.cc/ZRS5Dx5S/1.jpg'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+    elif mtext =='3':
+        image_message = ImageSendMessage(
+        original_content_url='https://i.postimg.cc/mgfJ9XXB/2.png',
+        preview_image_url='https://i.postimg.cc/mgfJ9XXB/2.png'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+        
+    elif mtext =='4':
+        image_message = ImageSendMessage(
+        original_content_url='https://i.postimg.cc/Pxg9MSXW/3.png',
+        preview_image_url='https://i.postimg.cc/Pxg9MSXW/3.png'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
 
