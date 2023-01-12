@@ -49,7 +49,7 @@ def handle_message(event):
             event.reply_token, message)   
     
     elif mtext =='1':
-            message = TextSendMessage(text='''未附圖片''')
+        message = TextSendMessage(text='''未附圖片''')
         line_bot_api.reply_message(
             event.reply_token, message) 
     
