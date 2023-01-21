@@ -40,20 +40,20 @@ def callback():
 
     return 'OK'
 
+alllst = pd.read_excel("final.xlsx")
+products = []
+websites = []
+for row in alllst.iterrows():
+        products.append(row[1]["商品型號"])
+        websites.append(row[1]["照片"])
+dic = {}
+for num in range(1,len(websites)+1):
+        dic[num] = [products[num],websites[num]]
+ 
     
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     mtext = event.message.text
-    alllst = pd.read_excel("final.xlsx")
-    products = []
-    websites = []
-    for row in alllst.iterrows():
-        products.append(row[1]["商品型號"])
-        websites.append(row[1]["照片"])
-    dic = {}
-    for num in range(1,len(websites)+1):
-        dic[num] = [products[num],websites[num]]
-
     if mtext =='info':
         message = TextSendMessage(text='''歡迎使用小廢柴2.0🙌 
 請輸入查核表的編號🤖
@@ -65,7 +65,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token, message) 
    
-    elif mtext in dic.keys():
+    elif mtext in dic.keys():        
         message = TextSendMessage(text = dic[mtext-1][0])
         line_bot_api.reply_message(
             event.reply_token, message) 
