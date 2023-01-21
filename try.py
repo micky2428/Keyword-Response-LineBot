@@ -65,23 +65,27 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token, message) 
    
-    elif mtext in dic:        
-        message = TextSendMessage(text = dic[mtext][0])
-        line_bot_api.reply_message(
-            event.reply_token, message) 
+    elif mtext in dic: 
         if dic[mtext][1] != "None":
-            image_message = ImageSendMessage(
-            original_content_url= "'" + dic[mtext][1] +"'",
-            preview_image_url= "'" +dic[mtext][1]+"'"
-            )
+            message = [
+                TextSendMessage(
+                text = dic[mtext][0]
+                ),       
+                ImageSendMessage(
+                original_content_url= dic[mtext][1] ,
+                preview_image_url= dic[mtext][1]
+                )]
             line_bot_api.reply_message(event.reply_token, image_message)
         else:
-            wordmessage = TextSendMessage(text = dic[mtext][1])
-            line_bot_api.reply_message(
-                event.reply_token, wordmessage)
-
-    
-            
+            message = [
+                TextSendMessage(
+                text = dic[mtext][0]
+                ),       
+                TextSendMessage(
+                text = dic[mtext][1]
+                )]
+            line_bot_api.reply_message(event.reply_token, image_message)
+          
 
 if __name__ == "__main__":
     app.run()
