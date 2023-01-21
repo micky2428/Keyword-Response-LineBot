@@ -75,7 +75,7 @@ def handle_message(event):
                 original_content_url= dic[mtext][1] ,
                 preview_image_url= dic[mtext][1]
                 )]
-            line_bot_api.reply_message(event.reply_token, image_message)
+            line_bot_api.reply_message(event.reply_token, message)
         else:
             message = [
                 TextSendMessage(
@@ -84,7 +84,7 @@ def handle_message(event):
                 TextSendMessage(
                 text = dic[mtext][1]
                 )]
-            line_bot_api.reply_message(event.reply_token, image_message)
+            line_bot_api.reply_message(event.reply_token, message)
           
 
 if __name__ == "__main__":
