@@ -48,7 +48,7 @@ for row in alllst.iterrows():
         websites.append(row[1]["照片"])
 dic = {}
 for num in range(len(websites)):
-        dic[num] = [products[num],websites[num]]
+        dic[num+1] = [products[num],websites[num]]
  
     
 @handler.add(MessageEvent, message=TextMessage)
@@ -65,18 +65,18 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token, message) 
    
-    elif mtext in dic.keys():        
-        message = TextSendMessage(text = dic[mtext-1][0])
+    elif int(mtext) in dic:        
+        message = TextSendMessage(text = "'''"+dic[mtext][0]+"'''")
         line_bot_api.reply_message(
             event.reply_token, message) 
-        if dic[mtext-1][1] != "None":
+        if dic[mtext][1] != "None":
             image_message = ImageSendMessage(
-            original_content_url= dic[mtext-1][1],
-            preview_image_url= dic[mtext-1][1]
+            original_content_url= "'" + dic[mtext][1] +"'",
+            preview_image_url= "'" +dic[mtext][1]+"'"
             )
             line_bot_api.reply_message(event.reply_token, image_message)
         else:
-            wordmessage = TextSendMessage(text = dic[mtext-1][1])
+            wordmessage = TextSendMessage(text = "'''"+dic[mtext][1]+"'''")
             line_bot_api.reply_message(
                 event.reply_token, wordmessage)
 
