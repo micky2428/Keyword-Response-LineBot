@@ -66,7 +66,7 @@ def handle_message(event):
             event.reply_token, message) 
    
     elif mtext in dic:        
-        message = TextSendMessage(text = "'''"+dic[mtext][0]+"'''")
+        message = TextSendMessage(text = dic[mtext][0])
         line_bot_api.reply_message(
             event.reply_token, message) 
         if dic[mtext][1] != "None":
@@ -76,7 +76,7 @@ def handle_message(event):
             )
             line_bot_api.reply_message(event.reply_token, image_message)
         else:
-            wordmessage = TextSendMessage(text = "'''"+dic[mtext][1]+"'''")
+            wordmessage = TextSendMessage(text = dic[mtext][1])
             line_bot_api.reply_message(
                 event.reply_token, wordmessage)
 
