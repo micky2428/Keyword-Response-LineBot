@@ -47,7 +47,7 @@ for row in alllst.iterrows():
         products.append(row[1]["商品型號"])
         websites.append(row[1]["照片"])
 dic = {}
-for num in range(1,len(websites)+1):
+for num in range(len(websites)):
         dic[num] = [products[num],websites[num]]
  
     
