@@ -48,7 +48,7 @@ for row in alllst.iterrows():
         websites.append(row[1]["照片"])
 dic = {}
 for num in range(len(websites)):
-        dic[num+1] = [products[num],websites[num]]
+        dic[str(num+1)] = [products[num],websites[num]]
  
     
 @handler.add(MessageEvent, message=TextMessage)
@@ -65,7 +65,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token, message) 
    
-    elif int(mtext) in dic:        
+    elif mtext in dic:        
         message = TextSendMessage(text = "'''"+dic[mtext][0]+"'''")
         line_bot_api.reply_message(
             event.reply_token, message) 
