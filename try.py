@@ -61,7 +61,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token, message)       
     elif mtext =='0':
-        message = TextSendMessage(text='''未附圖片''')
+        message = TextSendMessage(text='''沒有此選項''')
         line_bot_api.reply_message(
             event.reply_token, message) 
    
@@ -82,7 +82,7 @@ def handle_message(event):
                 text = dic[mtext][0]
                 ),       
                 TextSendMessage(
-                text = dic[mtext][1]
+                text = '''沒有圖片'''
                 )]
             line_bot_api.reply_message(event.reply_token, message)
           
