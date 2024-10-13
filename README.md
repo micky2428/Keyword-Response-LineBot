@@ -1,6 +1,7 @@
 # Keyword-Response-LineBot
 
 Keyword-Response-LineBot is designed to assist with verification processes. The bot, written in Python, enables users to input a number and receive images and related information about the item under inspection.
+(The service is currently disabled as the project has concluded.)
 
 ## Project Overview
 
