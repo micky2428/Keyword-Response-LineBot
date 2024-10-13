@@ -10,7 +10,8 @@ The primary functionalities of the bot include:
 
 2. **Webhook Integration**: The bot is integrated with a Webhook that retrieves data from a remote server deployed on Render, ensuring real-time access to product information for field inspectors.
 
-![Uploading 462540174_1251801995969367_1749125080688074138_n.jpg…]()
+![462540174_1251801995969367_1749125080688074138_n](https://github.com/user-attachments/assets/6cff5553-4b4c-4851-bec6-3846425dd1a9)
+
 
 
 ## Purpose
