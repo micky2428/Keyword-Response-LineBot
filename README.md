@@ -24,7 +24,7 @@ By using the Line Bot, inspectors can now easily zoom in on images and view clea
 
 1. **Procfile**: Tells the server to use Gunicorn, a Python WSGI HTTP server, to serve the app function located in the try.py file. This is essential for deploying the Line Bot on platforms like Render.
 
-2. **final.xlsx**: Contains images and textual descriptions related to the inspection items, used by the Line Bot to provide responses based on user inputs.[Sensitive data has been removed.]
+2. **final.xlsx**: Contains images and textual descriptions related to the inspection items, used by the Line Bot to provide responses based on user inputs.**Sensitive data has been removed.**
 
 3. **render.yaml**: Defines the configuration settings for deploying the Line Bot on Render, including environment settings, service type, and deployment parameters.
 
