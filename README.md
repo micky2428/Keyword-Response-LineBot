@@ -10,6 +10,9 @@ The primary functionalities of the bot include:
 
 2. **Webhook Integration**: The bot is integrated with a Webhook that retrieves data from a remote server deployed on Render, ensuring real-time access to product information for field inspectors.
 
+![Uploading 462540174_1251801995969367_1749125080688074138_n.jpg…]()
+
+
 ## Purpose
 
 The motivation behind developing the Keyword-Response-LineBot stems from the need to improve the traditional verification process, which relied on paper documents with small text and images, making it difficult to review details efficiently. 
